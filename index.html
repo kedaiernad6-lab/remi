@@ -8,141 +8,143 @@
 body { 
     font-family: Arial, sans-serif; 
     margin:0; 
-    background:#ffffff; 
-    color:#333;
-}
-
-/* Banner container */
-.banner-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    background:#1a1a1a;   /* gelap elegan */
+    color:#eaeaea;
+    font-size:18px;
+    line-height:1.5em;
+    font-weight: bold;
     text-align: center;
-    padding: 10px;
 }
 
-.banner-img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+/* Bungkus semua konten */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
+/* Banner */
+.banner-container {width: 100%;}
+.banner-img {width: 100%; height: auto; display: block; margin: 0 auto;}
+
+/* Heading */
 h2{
-    text-align:center;
-    color:#1976d2;
-    margin-top:20px;
+    color:#9c27b0; /* ungu Joker */
+    margin-top:15px;
+    font-size:24px;
+    text-shadow: 1px 1px 3px #000;
 }
+
+/* Tabel */
 table{
     border-collapse:collapse;
     margin:20px auto;
-    width:95%;
-    max-width:700px;
-    background:#fafafa;
+    width:98%;
+    background:#2a2a2a;
     border-radius:12px;
     overflow:hidden;
-    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    box-shadow:0 2px 10px rgba(0,0,0,0.5);
+    font-size:18px;
 }
-th,td{
-    border:1px solid #ddd;
-    padding:10px;
-    text-align:center;
-}
+th,td{border:1px solid #444;padding:14px;text-align:center;}
 th{
-    background-color:#1976d2;
-    color:#fff;
+    background-color:#4a148c; /* ungu tua */
+    color:#cddc39;            /* hijau neon */
 }
 input.poin,input.nama{
-    width:90%;
-    padding:6px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    text-align:center;
-    background:#fff;
-    color:#333;
-}
-.juara{
-    background-color:#4caf50;
-    font-weight:bold;
-    color:#fff;
-}
-.kalah{
-    background-color:#e53935;
-    color:#fff;
-}
-.btn{
-    margin:10px 5px;
-    padding:10px 18px;
-    border:none;
+    width:95%;
+    padding:10px;
+    border:1px solid #666;
     border-radius:8px;
-    font-size:14px;
+    text-align:center;
+    background:#1e1e1e;
+    color:#cddc39; /* hijau neon */
+    font-size:18px;
+    font-weight:bold;
+}
+.juara{background-color:#388e3c;color:#fff;}
+.kalah{background-color:#d32f2f;color:#fff;}
+
+/* Tombol */
+.btn{
+    margin:12px 6px;
+    padding:14px 22px;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
     font-weight:bold;
     cursor:pointer;
     color:white;
-    box-shadow:0 3px 6px rgba(0,0,0,0.2);
+    min-width:150px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
-.btn-proses{background-color:#2e7d32;}
-.btn-reset{background-color:#d32f2f;}
-.btn-wa{
-    background-color:#25D366;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-.btn-wa:hover{
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #25D366;
-}
-.btn-wa:active{
-    transform: scale(0.95);
-    box-shadow: 0 0 5px #25D366;
-}
+.btn-proses{background-color:#388e3c;}  /* hijau */
+.btn-reset{background-color:#d32f2f;}   /* merah */
+.btn-wa{background-color:#25D366;transition: transform 0.2s, box-shadow 0.2s;}
+.btn-wa:hover{transform: scale(1.05);box-shadow: 0 0 15px #25D366;}
+.btn-wa:active{transform: scale(0.95);box-shadow: 0 0 5px #25D366;}
+
+/* Riwayat */
 #riwayat{
-    background:#fafafa;
+    background:#2a2a2a;
     border-radius:12px;
-    padding:15px;
+    padding:18px;
     margin:20px auto;
+    width:95%;
     max-width:700px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    box-shadow:0 2px 10px rgba(0,0,0,0.5);
+    font-size:16px;
+    color:#eaeaea;
 }
-#riwayat h3{margin-top:0;color:#1976d2;}
-@media screen and (max-width:600px){
-    input.poin,input.nama{width:80%;}
-    table, th, td {font-size:14px;}
+#riwayat h3{
+    margin-top:0;
+    color:#9c27b0;
+    font-size:20px;
 }
-.btn-wa.pulse{
-    animation: pulse 1.5s infinite;
-}
+
+/* Animasi WA */
+.btn-wa.pulse{animation: pulse 1.5s infinite;}
 @keyframes pulse{
-    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
-    70% { box-shadow: 0 0 0 10px rgba(37,211,102,0); }
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+    70% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
     100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
 }
-#footer{
-    text-align:center;
-    margin:30px 0;
-}
+
+/* Gelar */
 .gelar-bawah{
-    text-align:center;
-    margin-top:15px;
-    font-size:22px;
+    margin-top:20px;
+    font-size:20px;
     font-weight:bold;
     line-height:1.8em;
-    color:#444;
+    color:#cddc39;
+    text-shadow: 1px 1px 3px #000;
+}
+
+/* Responsif HP */
+@media screen and (max-width:600px){
+    body{font-size:16px;}
+    table, th, td {font-size:16px;}
+    input.poin,input.nama{font-size:16px;padding:8px;}
+    .btn{font-size:16px;min-width:120px;padding:12px 18px;}
 }
 </style>
 </head>
 <body>
 
-<!-- Banner Section -->
+<div class="container">
+
+<!-- Banner -->
 <div class="banner-container">
-  <img src="https://raw.githubusercontent.com/kedaiernad6-lab/remi/786abb5c854288f1539f2b135000f84e0902a75a/baner.png" 
-       alt="Banner Remi" 
-       class="banner-img">
+  <img src="baner.png" alt="Banner Remi" class="banner-img">
 </div>
 
 <h2>🏆 Skor Remi 4 Pemain</h2>
 
-<div style="text-align:center;">
-<label>Poin Maksimum: <input type="number" id="poinMaks" value="500"></label><br><br>
+<div>
+<label style="color:#cddc39;">Poin Maksimum: 
+<input type="number" id="poinMaks" value="500" 
+style="font-size:18px;padding:8px;border-radius:8px;border:1px solid #666;background:#1e1e1e;color:#cddc39;font-weight:bold;">
+</label>
 </div>
 
 <table>
@@ -150,33 +152,16 @@ input.poin,input.nama{
 <tr><th>Nama Pemain</th><th>Poin Sekarang</th><th>Tambah Poin</th></tr>
 </thead>
 <tbody id="tabelPemain">
-<tr>
-<td><input type="text" class="nama" value="Pemain 1"></td>
-<td id="total0">0</td>
-<td><input type="number" class="poin"></td>
-</tr>
-<tr>
-<td><input type="text" class="nama" value="Pemain 2"></td>
-<td id="total1">0</td>
-<td><input type="number" class="poin"></td>
-</tr>
-<tr>
-<td><input type="text" class="nama" value="Pemain 3"></td>
-<td id="total2">0</td>
-<td><input type="number" class="poin"></td>
-</tr>
-<tr>
-<td><input type="text" class="nama" value="Pemain 4"></td>
-<td id="total3">0</td>
-<td><input type="number" class="poin"></td>
-</tr>
+<tr><td><input type="text" class="nama" value="Pemain 1"></td><td id="total0"></td><td><input type="number" class="poin"></td></tr>
+<tr><td><input type="text" class="nama" value="Pemain 2"></td><td id="total1"></td><td><input type="number" class="poin"></td></tr>
+<tr><td><input type="text" class="nama" value="Pemain 3"></td><td id="total2"></td><td><input type="number" class="poin"></td></tr>
+<tr><td><input type="text" class="nama" value="Pemain 4"></td><td id="total3"></td><td><input type="number" class="poin"></td></tr>
 </tbody>
 </table>
 
-<!-- Gelar tampil di bawah tabel -->
 <div id="gelarContainer" class="gelar-bawah"></div>
 
-<div style="text-align:center;">
+<div>
 <button class="btn btn-proses" onclick="prosesSkor()">➕ Proses Ronde</button>
 <button class="btn btn-reset" onclick="resetGame()">🔄 Reset Permainan</button>
 </div>
@@ -190,144 +175,67 @@ input.poin,input.nama{
 <button class="btn btn-wa pulse" onclick="kirimWhatsApp()">Weenz Custom App</button>
 </div>
 
+</div> <!-- end container -->
+
 <script>
-let totalPoin=[0,0,0,0];
+let totalPoin=[null,null,null,null];
 let gelar=["-","-","-","-"];
 
-function getNama(i){
-    return document.querySelectorAll(".nama")[i].value.trim() || `Pemain ${i+1}`;
-}
-
+function getNama(i){return document.querySelectorAll(".nama")[i].value.trim() || `Pemain ${i+1}`;}
 function updateGelarBawah(){
     let teks="";
     for(let i=0;i<4;i++){
         if(gelar[i] !== "-"){
-            teks+=`☠️ <span style="color:#1976d2; font-size:24px;">${getNama(i)}</span> → <span style="font-weight:bold; font-size:24px;">${gelar[i]}</span><br>`;
+            teks+=`☠️ <span style="color:#cddc39; font-size:22px;">${getNama(i)}</span> → <span style="font-weight:bold; font-size:22px; color:#9c27b0;">${gelar[i]}</span><br>`;
         }
     }
-    if(teks===""){ 
-        teks="<i>Belum ada pemain yang mendapat gelar</i>"; 
-    }
+    if(teks===""){ teks="<i>Belum ada pemain yang mendapat gelar</i>"; }
     document.getElementById("gelarContainer").innerHTML=teks;
 }
-
-function naikGelar(i){
-    if(gelar[i]==="-") gelar[i]="RT";
-    else if(gelar[i]==="RT") gelar[i]="RW";
-    else if(gelar[i]==="RW") gelar[i]="Kades";
-    updateGelarBawah();
-}
-
-function turunGelar(i){
-    if(gelar[i]==="Kades") gelar[i]="RW";
-    else if(gelar[i]==="RW") gelar[i]="RT";
-    else if(gelar[i]==="RT") gelar[i]="-";
-    updateGelarBawah();
-}
-
-function getTertinggi(){
-    if(gelar.includes("Kades")) return "Kades";
-    if(gelar.includes("RW")) return "RW";
-    if(gelar.includes("RT")) return "RT";
-    return "-";
-}
-
-function turunkanTertinggi(){
-    let t=getTertinggi();
-    if(t=="Kades"){
-        let idx=gelar.findIndex(g=>"Kades"===g);
-        gelar[idx]="RW";
-        updateGelarBawah();
-        return true;
-    } else if(t=="RW"){
-        let idx=gelar.findIndex(g=>"RW"===g);
-        gelar[idx]="RT";
-        updateGelarBawah();
-        return true;
-    } else if(t=="RT"){
-        let idx=gelar.findIndex(g=>"RT"===g);
-        gelar[idx]="-";
-        updateGelarBawah();
-        return true;
-    }
-    return false;
-}
-
+function naikGelar(i){if(gelar[i]==="-") gelar[i]="RT"; else if(gelar[i]==="RT") gelar[i]="RW"; else if(gelar[i]==="RW") gelar[i]="Kades"; updateGelarBawah();}
+function turunGelar(i){if(gelar[i]==="Kades") gelar[i]="RW"; else if(gelar[i]==="RW") gelar[i]="RT"; else if(gelar[i]==="RT") gelar[i]="-"; updateGelarBawah();}
+function getTertinggi(){if(gelar.includes("Kades")) return "Kades"; if(gelar.includes("RW")) return "RW"; if(gelar.includes("RT")) return "RT"; return "-";}
+function turunkanTertinggi(){let t=getTertinggi(); if(t=="Kades"){gelar[gelar.findIndex(g=>"Kades"===g)]="RW"; updateGelarBawah(); return true;} else if(t=="RW"){gelar[gelar.findIndex(g=>"RW"===g)]="RT"; updateGelarBawah(); return true;} else if(t=="RT"){gelar[gelar.findIndex(g=>"RT"===g)]="-"; updateGelarBawah(); return true;} return false;}
 function prosesSkor(){
     let poinMaks=parseInt(document.getElementById("poinMaks").value);
     let poinInputs=document.querySelectorAll(".poin");
     let baris=document.querySelectorAll("#tabelPemain tr");
-
     for(let i=0;i<4;i++){
-        totalPoin[i]+=parseInt(poinInputs[i].value)||0;
-        document.getElementById("total"+i).innerText=totalPoin[i];
+        let nilai=parseInt(poinInputs[i].value);
+        if(totalPoin[i]==null) totalPoin[i]=0;
+        totalPoin[i]+=isNaN(nilai)?0:nilai;
+        document.getElementById("total"+i).innerText=(totalPoin[i]===0 && nilai==null) ? "" : totalPoin[i];
         poinInputs[i].value="";
         baris[i].classList.remove("juara","kalah");
     }
-
     let pemenang=totalPoin.findIndex(p=>p>=poinMaks);
     if(pemenang!==-1){
         baris[pemenang].classList.add("juara");
         turunGelar(pemenang);
-
-        let minPoin=Math.min(...totalPoin);
+        let minPoin=Math.min(...totalPoin.map(p=>p??Infinity));
         let indeksKalah=totalPoin.indexOf(minPoin);
         if(indeksKalah!==pemenang){
             let namaKalah = getNama(indeksKalah);
-            if(gelar[indeksKalah]!=="-"){
-                naikGelar(indeksKalah);
-                let li=document.createElement("li");
-                li.innerText=`⚠️ ${namaKalah} kalah lagi → gelar naik menjadi ${gelar[indeksKalah]}`;
-                document.getElementById("riwayatList").appendChild(li);
-            } else if(getTertinggi()!="-"){
-                turunkanTertinggi();
-                let li=document.createElement("li");
-                li.innerText=`⚠️ ${namaKalah} kalah tapi belum mendapat gelar. Gelar tertinggi diturunkan.`;
-                document.getElementById("riwayatList").appendChild(li);
-            } else {
-                naikGelar(indeksKalah);
-                let li=document.createElement("li");
-                li.innerText=`⚠️ ${namaKalah} kalah → gelar naik menjadi ${gelar[indeksKalah]}`;
-                document.getElementById("riwayatList").appendChild(li);
-            }
+            if(gelar[indeksKalah]!=="-"){naikGelar(indeksKalah); let li=document.createElement("li"); li.innerText=`⚠️ ${namaKalah} kalah lagi → gelar naik menjadi ${gelar[indeksKalah]}`; document.getElementById("riwayatList").appendChild(li);}
+            else if(getTertinggi()!="-"){turunkanTertinggi(); let li=document.createElement("li"); li.innerText=`⚠️ ${namaKalah} kalah tapi belum mendapat gelar. Gelar tertinggi diturunkan.`; document.getElementById("riwayatList").appendChild(li);}
+            else {naikGelar(indeksKalah); let li=document.createElement("li"); li.innerText=`⚠️ ${namaKalah} kalah → gelar naik menjadi ${gelar[indeksKalah]}`; document.getElementById("riwayatList").appendChild(li);}
             baris[indeksKalah].classList.add("kalah");
         }
-
-        totalPoin=[0,0,0,0];
-        for(let i=0;i<4;i++) document.getElementById("total"+i).innerText="0";
+        totalPoin=[null,null,null,null];
+        for(let i=0;i<4;i++) document.getElementById("total"+i).innerText="";
     }
-
     updateGelarBawah();
 }
-
 function resetGame(){
-    totalPoin=[0,0,0,0];
-    gelar=["-","-","-","-"];
-    let poinInputs=document.querySelectorAll(".poin");
-    let baris=document.querySelectorAll("#tabelPemain tr");
-    for(let i=0;i<4;i++){
-        document.getElementById("total"+i).innerText="0";
-        poinInputs[i].value="";
-        baris[i].classList.remove("juara","kalah");
-    }
-    document.getElementById("riwayatList").innerHTML="";
-    updateGelarBawah();
+    totalPoin=[null,null,null,null]; gelar=["-","-","-","-"];
+    let poinInputs=document.querySelectorAll(".poin"); let baris=document.querySelectorAll("#tabelPemain tr");
+    for(let i=0;i<4;i++){document.getElementById("total"+i).innerText=""; poinInputs[i].value=""; baris[i].classList.remove("juara","kalah");}
+    document.getElementById("riwayatList").innerHTML=""; updateGelarBawah();
 }
-
-function kirimWhatsApp(){
-    let nomor="6285176851029";
-    let pesan=encodeURIComponent("Halo, saya ingin menggunakan Weenz Custom App!");
-    window.open(`https://wa.me/${nomor}?text=${pesan}`, "_blank");
-}
-
+function kirimWhatsApp(){let nomor="6285176851029"; let pesan=encodeURIComponent("Halo, saya ingin menggunakan Weenz Custom App!"); window.open(`https://wa.me/${nomor}?text=${pesan}`, "_blank");}
 window.onload = function(){
-    let btnWA = document.querySelector(".btn-wa");
-    btnWA.classList.add("pulse");
-    updateGelarBawah();
-
-    document.querySelectorAll(".nama").forEach(input=>{
-        input.addEventListener("input", updateGelarBawah);
-    });
+    let btnWA = document.querySelector(".btn-wa"); btnWA.classList.add("pulse"); updateGelarBawah();
+    document.querySelectorAll(".nama").forEach(input=>{input.addEventListener("input", updateGelarBawah);});
 };
 </script>
 </body>
