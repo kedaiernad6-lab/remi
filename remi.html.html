@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Skor Remi 4 Pemain</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { 
+    font-family: Arial, sans-serif; 
+    margin:0; 
+    background:#1a1a1a;   /* gelap elegan */
+    color:#eaeaea;
+    font-size:18px;
+    line-height:1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Bungkus semua konten */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* Banner */
+.banner-container {width: 100%;}
+.banner-img {width: 100%; height: auto; display: block; margin: 0 auto;}
+
+/* Heading */
+h2{
+    color:#9c27b0; /* ungu Joker */
+    margin-top:15px;
+    font-size:24px;
+    text-shadow: 1px 1px 3px #000;
+}
+
+/* Tabel */
+table{
+    border-collapse:collapse;
+    margin:20px auto;
+    width:98%;
+    background:#2a2a2a;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,0.5);
+    font-size:18px;
+}
+th,td{border:1px solid #444;padding:14px;text-align:center;}
+th{
+    background-color:#4a148c; /* ungu tua */
+    color:#cddc39;            /* hijau neon */
+}
+input.poin,input.nama{
+    width:95%;
+    padding:10px;
+    border:1px solid #666;
+    border-radius:8px;
+    text-align:center;
+    background:#1e1e1e;
+    color:#cddc39; /* hijau neon */
+    font-size:18px;
+    font-weight:bold;
+}
+.juara{background-color:#388e3c;color:#fff;}
+.kalah{background-color:#d32f2f;color:#fff;}
+
+/* Tombol */
+.btn{
+    margin:12px 6px;
+    padding:14px 22px;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    color:white;
+    min-width:150px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+.btn-proses{background-color:#388e3c;}  /* hijau */
+.btn-reset{background-color:#d32f2f;}   /* merah */
+.btn-wa{background-color:#25D366;transition: transform 0.2s, box-shadow 0.2s;}
+.btn-wa:hover{transform: scale(1.05);box-shadow: 0 0 15px #25D366;}
+.btn-wa:active{transform: scale(0.95);box-shadow: 0 0 5px #25D366;}
+
+/* Riwayat */
+#riwayat{
+    background:#2a2a2a;
+    border-radius:12px;
+    padding:18px;
+    margin:20px auto;
+    width:95%;
+    max-width:700px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.5);
+    font-size:16px;
+    color:#eaeaea;
+}
+#riwayat h3{
+    margin-top:0;
+    color:#9c27b0;
+    font-size:20px;
+}
+
+/* Animasi WA */
+.btn-wa.pulse{animation: pulse 1.5s infinite;}
+@keyframes pulse{
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+    70% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* Gelar */
+.gelar-bawah{
+    margin-top:20px;
+    font-size:20px;
+    font-weight:bold;
+    line-height:1.8em;
+    color:#cddc39;
+    text-shadow: 1px 1px 3px #000;
+}
+
+/* Responsif HP */
+@media screen and (max-width:600px){
+    body{font-size:16px;}
+    table, th, td {font-size:16px;}
+    input.poin,input.nama{font-size:16px;padding:8px;}
+    .btn{font-size:16px;min-width:120px;padding:12px 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Banner -->
+<div class="banner-container">
+  <img src="baner.png" alt="Banner Remi" class="banner-img">
+</div>
+
+<h2>🏆 Skor Remi 4 Pemain</h2>
+
+<div>
+<label style="color:#cddc39;">Poin Maksimum: 
+<input type="number" id="poinMaks" value="500" 
+style="font-size:18px;padding:8px;border-radius:8px;border:1px solid #666;background:#1e1e1e;color:#cddc39;font-weight:bold;">
+</label>
+</div>
+
+<table>
+<thead>
+<tr><th>Nama Pemain</th><th>Poin Sekarang</th><th>Tambah Poin</th></tr>
+</thead>
+<tbody id="tabelPemain">
+<tr><td><input type="text" class="nama" value="Pemain 1"></td><td id="total0"></td><td><input type="number" class="poin"></td></tr>
+<tr><td><input type="text" class="nama" value="Pemain 2"></td><td id="total1"></td><td><input type="number" class="poin"></td></tr>
+<tr><td><input type="text" class="nama" value="Pemain 3"></td><td id="total2"></td><td><input type="number" class="poin"></td></tr>
+<tr><td><input type="text" class="nama" value="Pemain 4"></td><td id="total3"></td><td><input type="number" class="poin"></td></tr>
+</tbody>
+</table>
+
+<div id="gelarContainer" class="gelar-bawah"></div>
+
+<div>
+<button class="btn btn-proses" onclick="prosesSkor()">➕ Proses Ronde</button>
+<button class="btn btn-reset" onclick="resetGame()">🔄 Reset Permainan</button>
+</div>
+
+<div id="riwayat">
+<h3>📜 Riwayat Kekalahan</h3>
+<ul id="riwayatList"></ul>
+</div>
+
+<div id="footer">
+<button class="btn btn-wa pulse" onclick="kirimWhatsApp()">Weenz Custom App</button>
+</div>
+
+</div> <!-- end container -->
+
+<script>
+let totalPoin=[null,null,null,null];
+let gelar=["-","-","-","-"];
+
+function getNama(i){return document.querySelectorAll(".nama")[i].value.trim() || `Pemain ${i+1}`;}
+function updateGelarBawah(){
+    let teks="";
+    for(let i=0;i<4;i++){
+        if(gelar[i] !== "-"){
+            teks+=`☠️ <span style="color:#cddc39; font-size:22px;">${getNama(i)}</span> → <span style="font-weight:bold; font-size:22px; color:#9c27b0;">${gelar[i]}</span><br>`;
+        }
+    }
+    if(teks===""){ teks="<i>Belum ada pemain yang mendapat gelar</i>"; }
+    document.getElementById("gelarContainer").innerHTML=teks;
+}
+function naikGelar(i){if(gelar[i]==="-") gelar[i]="RT"; else if(gelar[i]==="RT") gelar[i]="RW"; else if(gelar[i]==="RW") gelar[i]="Kades"; updateGelarBawah();}
+function turunGelar(i){if(gelar[i]==="Kades") gelar[i]="RW"; else if(gelar[i]==="RW") gelar[i]="RT"; else if(gelar[i]==="RT") gelar[i]="-"; updateGelarBawah();}
+function getTertinggi(){if(gelar.includes("Kades")) return "Kades"; if(gelar.includes("RW")) return "RW"; if(gelar.includes("RT")) return "RT"; return "-";}
+function turunkanTertinggi(){let t=getTertinggi(); if(t=="Kades"){gelar[gelar.findIndex(g=>"Kades"===g)]="RW"; updateGelarBawah(); return true;} else if(t=="RW"){gelar[gelar.findIndex(g=>"RW"===g)]="RT"; updateGelarBawah(); return true;} else if(t=="RT"){gelar[gelar.findIndex(g=>"RT"===g)]="-"; updateGelarBawah(); return true;} return false;}
+function prosesSkor(){
+    let poinMaks=parseInt(document.getElementById("poinMaks").value);
+    let poinInputs=document.querySelectorAll(".poin");
+    let baris=document.querySelectorAll("#tabelPemain tr");
+    for(let i=0;i<4;i++){
+        let nilai=parseInt(poinInputs[i].value);
+        if(totalPoin[i]==null) totalPoin[i]=0;
+        totalPoin[i]+=isNaN(nilai)?0:nilai;
+        document.getElementById("total"+i).innerText=(totalPoin[i]===0 && nilai==null) ? "" : totalPoin[i];
+        poinInputs[i].value="";
+        baris[i].classList.remove("juara","kalah");
+    }
+    let pemenang=totalPoin.findIndex(p=>p>=poinMaks);
+    if(pemenang!==-1){
+        baris[pemenang].classList.add("juara");
+        turunGelar(pemenang);
+        let minPoin=Math.min(...totalPoin.map(p=>p??Infinity));
+        let indeksKalah=totalPoin.indexOf(minPoin);
+        if(indeksKalah!==pemenang){
+            let namaKalah = getNama(indeksKalah);
+            if(gelar[indeksKalah]!=="-"){naikGelar(indeksKalah); let li=document.createElement("li"); li.innerText=`⚠️ ${namaKalah} kalah lagi → gelar naik menjadi ${gelar[indeksKalah]}`; document.getElementById("riwayatList").appendChild(li);}
+            else if(getTertinggi()!="-"){turunkanTertinggi(); let li=document.createElement("li"); li.innerText=`⚠️ ${namaKalah} kalah tapi belum mendapat gelar. Gelar tertinggi diturunkan.`; document.getElementById("riwayatList").appendChild(li);}
+            else {naikGelar(indeksKalah); let li=document.createElement("li"); li.innerText=`⚠️ ${namaKalah} kalah → gelar naik menjadi ${gelar[indeksKalah]}`; document.getElementById("riwayatList").appendChild(li);}
+            baris[indeksKalah].classList.add("kalah");
+        }
+        totalPoin=[null,null,null,null];
+        for(let i=0;i<4;i++) document.getElementById("total"+i).innerText="";
+    }
+    updateGelarBawah();
+
+    // simpan ke localStorage
+    localStorage.setItem("totalPoin", JSON.stringify(totalPoin));
+    localStorage.setItem("gelar", JSON.stringify(gelar));
+    localStorage.setItem("riwayat", document.getElementById("riwayatList").innerHTML);
+}
+function resetGame(){
+    totalPoin=[null,null,null,null]; gelar=["-","-","-","-"];
+    let poinInputs=document.querySelectorAll(".poin"); let baris=document.querySelectorAll("#tabelPemain tr");
+    for(let i=0;i<4;i++){document.getElementById("total"+i).innerText=""; poinInputs[i].value=""; baris[i].classList.remove("juara","kalah");}
+    document.getElementById("riwayatList").innerHTML=""; updateGelarBawah();
+
+    // hapus localStorage
+    localStorage.clear();
+}
+function kirimWhatsApp(){let nomor="6285176851029"; let pesan=encodeURIComponent("Halo, saya ingin menggunakan Weenz Custom App!"); window.open(`https://wa.me/${nomor}?text=${pesan}`, "_blank");}
+window.onload = function(){
+    let btnWA = document.querySelector(".btn-wa"); btnWA.classList.add("pulse");
+
+    // Ambil data tersimpan
+    let savedPoin = localStorage.getItem("totalPoin");
+    let savedGelar = localStorage.getItem("gelar");
+    let savedRiwayat = localStorage.getItem("riwayat");
+
+    if(savedPoin){
+        totalPoin = JSON.parse(savedPoin);
+        totalPoin.forEach((p,i)=>{
+            if(p!==null) document.getElementById("total"+i).innerText = p;
+        });
+    }
+    if(savedGelar){
+        gelar = JSON.parse(savedGelar);
+        updateGelarBawah();
+    }
+    if(savedRiwayat){
+        document.getElementById("riwayatList").innerHTML = savedRiwayat;
+    }
+
+    document.querySelectorAll(".nama").forEach(input=>{input.addEventListener("input", updateGelarBawah);});
+};
+</script>
+</body>
+</html>
